@@ -1,9 +1,11 @@
+from collections import Counter
+
+
 def part_two(list1, list2):
   total_sum = 0
+  frequency_map = Counter(list2)
   for element in list1:
-    repeated = list2.count(element)
-    total_sum += repeated * element
-
+    total_sum += element * frequency_map[element]
   return total_sum
 
 
